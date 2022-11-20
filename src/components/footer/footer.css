@@ -1,0 +1,97 @@
+footer {
+  background: rgba(0, 0, 0, 0.8);
+  padding: 3rem 0;
+  text-align: center;
+  font-size: 0.9rem;
+  margin-top: 7rem;
+  position: relative;
+}
+footer::after {
+  content: "";
+  width: 50%;
+  height: 0.1rem;
+  background: linear-gradient(45deg, #12c2e9, #c471ed, #f64f59);
+  position: absolute;
+  top: 0;
+  left: 25%;
+  opacity: 0.5;
+  /* transition: width 0.3s ease-in-out; */
+  animation: dance 1s linear infinite;
+}
+
+@keyframes dance {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+.footer__logo {
+  font-size: 2rem;
+  font-weight: 600;
+  display: inline-block;
+  margin-top: 2rem;
+  /* position: relative; */
+}
+.permalinks {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2rem;
+  margin: 1rem auto 3rem;
+}
+.footer__socials {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  align-items: center;
+  margin-bottom: 4rem;
+  font-size: 1.2rem;
+  transform: var(--transition);
+}
+.footer__socials a:hover {
+  transform: scale(1.4);
+}
+.footer__copyright {
+  margin-bottom: 4rem;
+}
+.astro {
+  position: absolute;
+  width: 15%;
+  /* height: 100%; */
+  bottom: 2rem;
+  right: 0;
+  transition: var(--transition);
+  cursor: default;
+  animation: astro__animation 3s linear infinite;
+}
+/* .astro:hover{
+    transform: rotate(-10deg);
+} */
+
+@keyframes astro__animation {
+  0% {
+    transform: rotate(-10deg);
+  }
+  50% {
+    transform: rotate(10deg);
+  }
+  100% {
+    transform: rotate(-10deg);
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .permalinks {
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+  .footer__socials {
+    margin-bottom: 2.6rem;
+  }
+}
